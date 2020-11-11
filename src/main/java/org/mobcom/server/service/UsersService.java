@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class UsersService {
@@ -22,7 +23,7 @@ public class UsersService {
     }
 
     public List<User> getAllUsers(){
-        TypedQuery<UserEntity> query = em.createNamedQuery(UserEntity.findAll, UserEntity.class);
+        TypedQuery<UserEntity> query = em.createNamedQuery(UserEntity.FIND_ALL, UserEntity.class);
 
         return query.getResultStream()
                 .map(UserMapper::fromUserEntity)
@@ -32,11 +33,10 @@ public class UsersService {
 
     public User createUser(User user){
         UserEntity entity = new UserEntity();
-        entity.setFirstName(user.getFirstName());
-        entity.setLastName(user.getLastName());
-        entity.setUserName(user.getUserName());
-        entity.setPassword(user.getPassword());
+        entity = UserMapper.toUserEntity(user);
 
+        String uuid = UUID.randomUUID().toString();
+        entity.setId(uuid);
 
         try {
             em.getTransaction().begin();

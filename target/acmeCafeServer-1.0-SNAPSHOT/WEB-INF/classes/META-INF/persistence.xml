@@ -9,6 +9,9 @@
     <class>org.mobcom.server.lib.MenuItem</class>
     <class>org.mobcom.server.persistence.BaseEntity</class>
     <class>org.mobcom.server.persistence.UserEntity</class>
+    <class>org.mobcom.server.persistence.VoucherEntity</class>
+    <class>org.mobcom.server.persistence.OrderEntity</class>
+    <class>org.mobcom.server.persistence.OrderMenuItemEntity</class>
     <properties>
         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/postgres" />
         <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

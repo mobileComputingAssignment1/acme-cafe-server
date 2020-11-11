@@ -6,11 +6,11 @@ import javax.persistence.*;
 @Table(name = "menu")
 @NamedQueries({
         @NamedQuery(
-                name = "org.mobcom.server.persistence.MenuItemEntity.findAll",
+                name = "MenuItemEntity.findAll",
                 query = "SELECT o FROM MenuItemEntity o")
 })
 public class MenuItemEntity extends BaseEntity {
-    public static final String findAll = "org.mobcom.server.persistence.MenuItemEntity.findAll";
+    public static final String FIND_ALL = "MenuItemEntity.findAll";
 
     @Column(name = "name")
     private String name;

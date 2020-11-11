@@ -16,7 +16,7 @@ public class MenuService {
     private EntityManager em = emf.createEntityManager();
 
     public List<MenuItem> getMenu() {
-        TypedQuery<MenuItemEntity> query = em.createNamedQuery(MenuItemEntity.findAll, MenuItemEntity.class);
+        TypedQuery<MenuItemEntity> query = em.createNamedQuery(MenuItemEntity.FIND_ALL, MenuItemEntity.class);
 
         return query.getResultStream()
                 .map(MenuItemMapper::fromMenuItemEntity)

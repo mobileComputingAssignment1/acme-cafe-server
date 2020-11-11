@@ -6,11 +6,11 @@ import javax.persistence.*;
 @Table(name = "users")
 @NamedQueries({
         @NamedQuery(
-                name = "org.mobcom.server.persistence.UserEntity.findAll",
+                name = "UserEntity.findAll",
                 query = "SELECT o FROM UserEntity o")
 })
 public class UserEntity extends BaseEntity {
-    public static final String findAll = "org.mobcom.server.persistence.UserEntity.findAll";
+    public static final String FIND_ALL = "UserEntity.findAll";
 
     @Column(name = "first_name")
     private String firstName;
@@ -32,10 +32,6 @@ public class UserEntity extends BaseEntity {
 
     @Column(name = "rsa_key")
     String RSAKey;
-
-    public static String getFindAll() {
-        return findAll;
-    }
 
     public String getFirstName() {
         return firstName;

@@ -4,13 +4,13 @@ import org.mobcom.server.persistence.BaseEntity;
 
 public class User extends BaseEntity {
 
-    String firstName;
-    String lastName;
-    int NIF;
-    String creditCard;
-    String userName;
-    String password;
-    String RSAKey;
+    private String firstName;
+    private String lastName;
+    private int NIF;
+    private String creditCard;
+    private String userName;
+    private String password;
+    private String RSAKey;
 
     public String getFirstName() {
         return firstName;

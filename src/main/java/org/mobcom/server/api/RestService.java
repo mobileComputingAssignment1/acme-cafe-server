@@ -1,6 +1,7 @@
 package org.mobcom.server.api;
 
 import org.glassfish.jersey.server.ResourceConfig;
+import org.mobcom.server.api.endpoints.*;
 
 import javax.ws.rs.ApplicationPath;
 
@@ -11,5 +12,7 @@ public class RestService extends ResourceConfig {
         register(HelloWorld.class);
         register(MenuApi.class);
         register(UsersApi.class);
+        register(VouchersApi.class);
+        register(OrdersApi.class);
     }
 }
