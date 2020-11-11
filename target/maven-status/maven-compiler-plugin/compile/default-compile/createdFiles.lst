@@ -1,0 +1,14 @@
+org\mobcom\server\persistence\BaseEntity.class
+org\mobcom\server\lib\User.class
+org\mobcom\server\api\RestService.class
+org\mobcom\server\service\mappers\UserMapper.class
+org\mobcom\server\lib\MenuItem.class
+org\mobcom\server\persistence\MenuItemEntity.class
+org\mobcom\server\persistence\UserEntity.class
+org\mobcom\server\service\mappers\MenuItemMapper.class
+org\mobcom\server\service\MenuService.class
+org\mobcom\server\api\MenuApi.class
+org\mobcom\server\service\UsersService.class
+org\mobcom\server\lib\BaseType.class
+org\mobcom\server\api\UsersApi.class
+org\mobcom\server\api\HelloWorld.class

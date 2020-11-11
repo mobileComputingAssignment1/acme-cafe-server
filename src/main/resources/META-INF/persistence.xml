@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="default">
+
+    <class>org.mobcom.server.persistence.MenuItemEntity</class>
+    <class>org.mobcom.server.lib.MenuItem</class>
+    <class>org.mobcom.server.persistence.BaseEntity</class>
+    <class>org.mobcom.server.persistence.UserEntity</class>
+    <properties>
+        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/postgres" />
+        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+        <property name="javax.persistence.jdbc.user" value="postgres" />
+        <property name="javax.persistence.jdbc.password" value="postgres" />
+
+        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
+        <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+        <property name="javax.persistence.schema-generation.create-source" value="metadata-then-script"/>
+        <property name="javax.persistence.sql-load-script-source" value="import.sql"/>
+    </properties>
+    </persistence-unit>
+</persistence>
