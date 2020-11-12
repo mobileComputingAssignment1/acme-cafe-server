@@ -8,16 +8,21 @@ INSERT INTO menu (id, timestamp, name, price) VALUES ('2ccff0d5-e126-4eaf-a199-9
 
 
 
-INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key) VALUES ('333f41f0-892a-490c-ad99-d4a236f1e333', NOW(), 'Joze', 'Gorisek', 281731640, '4797091646894574', 'gorisek', 'joze', '1rweadf');
-INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key) VALUES ('fd9e546e-4327-414c-830f-6589e8db6e83', NOW(), 'Joao', 'Silva', 201726580, '4898351512560974', 'silva', 'joze', '1rweadf');
-INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key) VALUES ('646c3dac-883c-46ba-94b7-9a8b44bea083', NOW(), 'Enrique', 'De Jong', 202841766, '4166830853062422', 'dejong', 'joze', '1rweadf');
-INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key) VALUES ('d85712a4-f2af-4ded-858c-a90126d44726', NOW(), 'Francis', 'Kent', 218867433, '4801711109469895', 'kent', 'joze', '1rweadf');
+INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key, active_coffees) VALUES ('333f41f0-892a-490c-ad99-d4a236f1e333', NOW(), 'Joze', 'Gorisek', 281731640, '4797091646894574', 'gorisek', 'joze', '1rweadf', 2);
+INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key, active_coffees) VALUES ('fd9e546e-4327-414c-830f-6589e8db6e83', NOW(), 'Joao', 'Silva', 201726580, '4898351512560974', 'silva', 'joze', '1rweadf', 2);
+INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key, active_coffees) VALUES ('646c3dac-883c-46ba-94b7-9a8b44bea083', NOW(), 'Enrique', 'De Jong', 202841766, '4166830853062422', 'dejong', 'joze', '1rweadf', 1);
+INSERT INTO users (id, timestamp, first_name, last_name, nif, credit_card, user_name, password, rsa_key, active_coffees) VALUES ('d85712a4-f2af-4ded-858c-a90126d44726', NOW(), 'Francis', 'Kent', 218867433, '4801711109469895', 'kent', 'joze', '1rweadf', 0);
 
 
 
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('4ccf48df-82c2-4af0-b2c7-f99ad743c459', NOW(), 0, 'free coffee');
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('d3d75981-2e2d-4e80-a616-0db48567b2b7', NOW(), 1, '5% discount');
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('59c5bdfb-4944-4840-be44-3fecf603fe28', NOW(), 1, '5% discount');
+
+
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('c192b4df-3cc7-4457-ab63-d30bd2538596', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '333f41f0-892a-490c-ad99-d4a236f1e333');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('2eae0338-7539-4bdc-bb14-8f8d3155ac96', NOW(), 'd3d75981-2e2d-4e80-a616-0db48567b2b7', '333f41f0-892a-490c-ad99-d4a236f1e333');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('e37ac398-0c00-4e41-9e12-0da6ee52540a', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'fd9e546e-4327-414c-830f-6589e8db6e83');
 
 
 INSERT INTO orders (id, timestamp, user_id, voucher_id, order_id, total_price, receipt_id) VALUES ('4ccf48df-82c2-4af0-b2c7-f99ad743c459', NOW(), '333f41f0-892a-490c-ad99-d4a236f1e333', '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 15.5, '4ccf48df-82c2-4af0-b2c7-f99ad743c459');

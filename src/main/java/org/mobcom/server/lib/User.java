@@ -1,6 +1,8 @@
 package org.mobcom.server.lib;
 
 import org.mobcom.server.persistence.BaseEntity;
+import org.mobcom.server.persistence.UserVoucherEntity;
+import java.util.List;
 
 public class User extends BaseEntity {
 
@@ -11,6 +13,8 @@ public class User extends BaseEntity {
     private String userName;
     private String password;
     private String RSAKey;
+    private int activeCoffees;
+    private List<UserVoucher> vouchers;
 
     public String getFirstName() {
         return firstName;
@@ -66,5 +70,21 @@ public class User extends BaseEntity {
 
     public void setRSAKey(String RSAKey) {
         this.RSAKey = RSAKey;
+    }
+
+    public int getActiveCoffees() {
+        return activeCoffees;
+    }
+
+    public void setActiveCoffees(int activeCoffees) {
+        this.activeCoffees = activeCoffees;
+    }
+
+    public List<UserVoucher> getVouchers() {
+        return vouchers;
+    }
+
+    public void setVouchers(List<UserVoucher> vouchers) {
+        this.vouchers = vouchers;
     }
 }

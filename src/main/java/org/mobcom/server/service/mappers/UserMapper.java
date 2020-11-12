@@ -1,7 +1,12 @@
 package org.mobcom.server.service.mappers;
 
 import org.mobcom.server.lib.User;
+import org.mobcom.server.lib.UserVoucher;
 import org.mobcom.server.persistence.UserEntity;
+import org.mobcom.server.persistence.UserVoucherEntity;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class UserMapper {
 
@@ -16,6 +21,16 @@ public class UserMapper {
         user.setUserName(entity.getUserName());
         user.setPassword(entity.getPassword());
         user.setRSAKey(entity.getRSAKey());
+        user.setActiveCoffees(entity.getActiveCoffees());
+
+        if (entity.getVouchers() != null) {
+            user.setVouchers(entity.getVouchers()
+                    .stream()
+                    .map(UserMapper::fromEntity)
+                    .collect(Collectors.toList()));
+        } else {
+            user.setVouchers(new ArrayList<>());
+        }
 
         return user;
     }
@@ -33,5 +48,14 @@ public class UserMapper {
         entity.setRSAKey(user.getRSAKey());
 
         return entity;
+    }
+
+    public static UserVoucher fromEntity(UserVoucherEntity entity) {
+        UserVoucher userVoucher = new UserVoucher();
+        userVoucher.setId(entity.getId());
+        userVoucher.setTimestamp(entity.getTimestamp());
+        userVoucher.setVoucherId(entity.getVoucherId());
+
+        return userVoucher;
     }
 }

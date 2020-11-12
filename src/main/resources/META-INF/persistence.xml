@@ -5,13 +5,13 @@
              version="2.2">
     <persistence-unit name="default">
 
-    <class>org.mobcom.server.persistence.MenuItemEntity</class>
-    <class>org.mobcom.server.lib.MenuItem</class>
     <class>org.mobcom.server.persistence.BaseEntity</class>
-    <class>org.mobcom.server.persistence.UserEntity</class>
-    <class>org.mobcom.server.persistence.VoucherEntity</class>
+    <class>org.mobcom.server.persistence.MenuItemEntity</class>
     <class>org.mobcom.server.persistence.OrderEntity</class>
     <class>org.mobcom.server.persistence.OrderMenuItemEntity</class>
+    <class>org.mobcom.server.persistence.UserEntity</class>
+    <class>org.mobcom.server.persistence.UserVoucherEntity</class>
+    <class>org.mobcom.server.persistence.VoucherEntity</class>
     <properties>
         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/postgres" />
         <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

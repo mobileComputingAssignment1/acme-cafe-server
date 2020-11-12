@@ -1,6 +1,7 @@
 package org.mobcom.server.persistence;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -23,19 +24,25 @@ public class UserEntity extends BaseEntity {
     private String lastName;
 
     @Column(name = "nif")
-    int NIF;
+    private int NIF;
 
     @Column(name = "credit_card")
-    String creditCard;
+    private String creditCard;
 
     @Column(name = "user_name")
-    String userName;
+    private String userName;
 
     @Column(name = "password")
-    String password;
+    private String password;
 
     @Column(name = "rsa_key")
-    String RSAKey;
+    private String RSAKey;
+
+    @Column(name = "active_coffees")
+    private int activeCoffees;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
+    private List<UserVoucherEntity> vouchers;
 
     public String getFirstName() {
         return firstName;
@@ -91,5 +98,21 @@ public class UserEntity extends BaseEntity {
 
     public void setRSAKey(String RSAKey) {
         this.RSAKey = RSAKey;
+    }
+
+    public int getActiveCoffees() {
+        return activeCoffees;
+    }
+
+    public void setActiveCoffees(int activeCoffees) {
+        this.activeCoffees = activeCoffees;
+    }
+
+    public List<UserVoucherEntity> getVouchers() {
+        return vouchers;
+    }
+
+    public void setVouchers(List<UserVoucherEntity> vouchers) {
+        this.vouchers = vouchers;
     }
 }
