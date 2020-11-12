@@ -25,6 +25,17 @@ public class UsersApi {
         }
     }
 
+    @GET
+    @Path("/{userId}")
+    public Response getUser(@PathParam("userId") String userId) {
+        try {
+            User user = usersService.getUser(userId);
+            return Response.ok(user).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
+    }
+
     @POST
     public Response createUser(User user) {
         try {
@@ -35,12 +46,12 @@ public class UsersApi {
         }
     }
 
-    @GET
-    @Path("/{userId}")
-    public Response getUser(@PathParam("userId") String userId) {
+    @POST
+    @Path("/login")
+    public Response loginUser(User user) {
         try {
-            User user = usersService.getUser(userId);
-            return Response.ok(user).build();
+            User loginUser = usersService.loginUser(user);
+            return Response.ok(loginUser).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
         }

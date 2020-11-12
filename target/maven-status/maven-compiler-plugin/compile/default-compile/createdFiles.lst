@@ -9,12 +9,10 @@ org\mobcom\server\lib\Voucher.class
 org\mobcom\server\lib\OrderMenuItem.class
 org\mobcom\server\persistence\UserEntity.class
 org\mobcom\server\service\mappers\MenuItemMapper.class
-org\mobcom\server\api\MenuApi.class
 org\mobcom\server\service\UsersService.class
 org\mobcom\server\api\endpoints\HelloWorld.class
 org\mobcom\server\api\endpoints\UsersApi.class
 org\mobcom\server\lib\Order.class
-org\mobcom\server\api\HelloWorld.class
 org\mobcom\server\service\OrdersService.class
 org\mobcom\server\api\endpoints\VouchersApi.class
 org\mobcom\server\service\mappers\VoucherMapper.class
@@ -26,4 +24,3 @@ org\mobcom\server\service\MenuService.class
 org\mobcom\server\service\VouchersService.class
 org\mobcom\server\api\endpoints\MenuApi.class
 org\mobcom\server\lib\BaseType.class
-org\mobcom\server\api\UsersApi.class

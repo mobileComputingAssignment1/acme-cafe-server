@@ -7,10 +7,14 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(
                 name = "UserEntity.findAll",
-                query = "SELECT o FROM UserEntity o")
+                query = "SELECT o FROM UserEntity o"),
+        @NamedQuery(
+                name = "UserEntity.findByUserName",
+                query = "SELECT o FROM UserEntity o WHERE o.userName = :userName")
 })
 public class UserEntity extends BaseEntity {
     public static final String FIND_ALL = "UserEntity.findAll";
+    public static final String FIND_BY_USER_NAME = "UserEntity.findByUserName";
 
     @Column(name = "first_name")
     private String firstName;
