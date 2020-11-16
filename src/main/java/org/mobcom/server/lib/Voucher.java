@@ -2,7 +2,7 @@ package org.mobcom.server.lib;
 
 import org.mobcom.server.persistence.BaseEntity;
 
-public class Voucher extends BaseEntity {
+public class Voucher extends BaseType {
     private byte type;
     private String name;
 

@@ -4,7 +4,7 @@ import org.mobcom.server.persistence.BaseEntity;
 import org.mobcom.server.persistence.UserVoucherEntity;
 import java.util.List;
 
-public class User extends BaseEntity {
+public class User extends BaseType {
 
     private String firstName;
     private String lastName;
