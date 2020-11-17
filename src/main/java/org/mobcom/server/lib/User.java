@@ -1,7 +1,5 @@
 package org.mobcom.server.lib;
 
-import org.mobcom.server.persistence.BaseEntity;
-import org.mobcom.server.persistence.UserVoucherEntity;
 import java.util.List;
 
 public class User extends BaseType {

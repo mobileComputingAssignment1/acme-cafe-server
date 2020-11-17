@@ -35,7 +35,7 @@ public class UserEntity extends BaseEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "rsa_key")
+    @Column(name = "rsa_key", length=512)
     private String RSAKey;
 
     @Column(name = "active_coffees")
@@ -91,6 +91,7 @@ public class UserEntity extends BaseEntity {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
     public String getRSAKey() {
         return RSAKey;
