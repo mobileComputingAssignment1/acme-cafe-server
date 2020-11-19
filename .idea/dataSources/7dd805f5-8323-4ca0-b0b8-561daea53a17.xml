@@ -784,13 +784,13 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1605612348</StartupTime>
+      <StartupTime>1605710624</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>3837</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4092</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -842,7 +842,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>3838</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4093</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="15" parent="2" name="heap">
@@ -921,19 +921,19 @@ false Zulu
     <language id="26" parent="2" name="plpgsql"/>
     <language id="27" parent="2" name="sql"/>
     <table id="28" parent="14" name="menu">
-      <ObjectId>20331</ObjectId>
+      <ObjectId>20682</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3808</StateNumber>
+      <StateNumber>4055</StateNumber>
     </table>
     <table id="29" parent="14" name="order_menu_items">
-      <ObjectId>20347</ObjectId>
+      <ObjectId>20698</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3814</StateNumber>
+      <StateNumber>4061</StateNumber>
     </table>
     <table id="30" parent="14" name="orders">
-      <ObjectId>20339</ObjectId>
+      <ObjectId>20690</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3814</StateNumber>
+      <StateNumber>4061</StateNumber>
     </table>
     <table id="31" parent="14" name="sequence">
       <ObjectId>17644</ObjectId>
@@ -941,55 +941,55 @@ false Zulu
       <StateNumber>1858</StateNumber>
     </table>
     <table id="32" parent="14" name="user_vouchers">
-      <ObjectId>20363</ObjectId>
+      <ObjectId>20714</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3815</StateNumber>
+      <StateNumber>4062</StateNumber>
     </table>
     <table id="33" parent="14" name="users">
-      <ObjectId>20355</ObjectId>
+      <ObjectId>20706</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3815</StateNumber>
+      <StateNumber>4062</StateNumber>
     </table>
     <table id="34" parent="14" name="vouchers">
-      <ObjectId>20371</ObjectId>
+      <ObjectId>20722</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>3813</StateNumber>
+      <StateNumber>4060</StateNumber>
     </table>
     <column id="35" parent="28" name="id">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3808</StateNumber>
+      <StateNumber>4055</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="36" parent="28" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3808</StateNumber>
+      <StateNumber>4055</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="37" parent="28" name="price">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
-      <StateNumber>3808</StateNumber>
+      <StateNumber>4055</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <column id="38" parent="28" name="timestamp">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3808</StateNumber>
+      <StateNumber>4055</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="39" parent="28" name="menu_pkey">
-      <ObjectId>20337</ObjectId>
-      <StateNumber>3808</StateNumber>
+      <ObjectId>20688</ObjectId>
+      <StateNumber>4055</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="40" parent="28" name="menu_pkey">
-      <ObjectId>20338</ObjectId>
-      <StateNumber>3808</StateNumber>
+      <ObjectId>20689</ObjectId>
+      <StateNumber>4055</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>menu_pkey</UnderlyingIndexName>
@@ -998,53 +998,53 @@ false Zulu
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3810</StateNumber>
+      <StateNumber>4057</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="42" parent="29" name="menu_item_id">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3810</StateNumber>
+      <StateNumber>4057</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="43" parent="29" name="quantity">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>3810</StateNumber>
+      <StateNumber>4057</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="44" parent="29" name="timestamp">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3810</StateNumber>
+      <StateNumber>4057</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="45" parent="29" name="order_id">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3810</StateNumber>
+      <StateNumber>4057</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="46" parent="29" name="order_menu_items_pkey">
-      <ObjectId>20353</ObjectId>
-      <StateNumber>3810</StateNumber>
+      <ObjectId>20704</ObjectId>
+      <StateNumber>4057</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="47" parent="29" name="order_menu_items_pkey">
-      <ObjectId>20354</ObjectId>
-      <StateNumber>3810</StateNumber>
+      <ObjectId>20705</ObjectId>
+      <StateNumber>4057</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>order_menu_items_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="48" parent="29" name="fk_order_menu_items_order_id">
-      <ObjectId>20379</ObjectId>
-      <StateNumber>3814</StateNumber>
+      <ObjectId>20730</ObjectId>
+      <StateNumber>4061</StateNumber>
       <ColNames>order_id</ColNames>
-      <RefTableId>20339</RefTableId>
+      <RefTableId>20690</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>orders</RefTableName>
       <RefKeyName>orders_pkey</RefKeyName>
@@ -1054,55 +1054,55 @@ false Zulu
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="50" parent="30" name="order_id">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="51" parent="30" name="receipt_id">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="52" parent="30" name="timestamp">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="53" parent="30" name="total_price">
       <Position>5</Position>
       <DataType>double precision|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <column id="54" parent="30" name="user_id">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="55" parent="30" name="voucher_id">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3809</StateNumber>
+      <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="56" parent="30" name="orders_pkey">
-      <ObjectId>20345</ObjectId>
-      <StateNumber>3809</StateNumber>
+      <ObjectId>20696</ObjectId>
+      <StateNumber>4056</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="57" parent="30" name="orders_pkey">
-      <ObjectId>20346</ObjectId>
-      <StateNumber>3809</StateNumber>
+      <ObjectId>20697</ObjectId>
+      <StateNumber>4056</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>orders_pkey</UnderlyingIndexName>
@@ -1138,47 +1138,47 @@ false Zulu
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3812</StateNumber>
+      <StateNumber>4059</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="63" parent="32" name="timestamp">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3812</StateNumber>
+      <StateNumber>4059</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="64" parent="32" name="voucher_id">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3812</StateNumber>
+      <StateNumber>4059</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="65" parent="32" name="user_id">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3812</StateNumber>
+      <StateNumber>4059</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="66" parent="32" name="user_vouchers_pkey">
-      <ObjectId>20369</ObjectId>
-      <StateNumber>3812</StateNumber>
+      <ObjectId>20720</ObjectId>
+      <StateNumber>4059</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="67" parent="32" name="user_vouchers_pkey">
-      <ObjectId>20370</ObjectId>
-      <StateNumber>3812</StateNumber>
+      <ObjectId>20721</ObjectId>
+      <StateNumber>4059</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>user_vouchers_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="68" parent="32" name="fk_user_vouchers_user_id">
-      <ObjectId>20384</ObjectId>
-      <StateNumber>3815</StateNumber>
+      <ObjectId>20735</ObjectId>
+      <StateNumber>4062</StateNumber>
       <ColNames>user_id</ColNames>
-      <RefTableId>20355</RefTableId>
+      <RefTableId>20706</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
@@ -1188,112 +1188,106 @@ false Zulu
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="70" parent="33" name="nif">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="71" parent="33" name="rsa_key">
       <Position>3</Position>
       <DataType>varchar(512)|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="72" parent="33" name="active_coffees">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="73" parent="33" name="credit_card">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="74" parent="33" name="first_name">
+    <column id="74" parent="33" name="full_name">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4088</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="75" parent="33" name="last_name">
-      <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3811</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="76" parent="33" name="password">
+    <column id="75" parent="33" name="password">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="77" parent="33" name="timestamp">
+    <column id="76" parent="33" name="timestamp">
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="78" parent="33" name="user_name">
+    <column id="77" parent="33" name="user_name">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3811</StateNumber>
+      <StateNumber>4058</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="79" parent="33" name="users_pkey">
-      <ObjectId>20361</ObjectId>
-      <StateNumber>3811</StateNumber>
+    <index id="78" parent="33" name="users_pkey">
+      <ObjectId>20712</ObjectId>
+      <StateNumber>4058</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="80" parent="33" name="users_pkey">
-      <ObjectId>20362</ObjectId>
-      <StateNumber>3811</StateNumber>
+    <key id="79" parent="33" name="users_pkey">
+      <ObjectId>20713</ObjectId>
+      <StateNumber>4058</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
     </key>
-    <column id="81" parent="34" name="id">
+    <column id="80" parent="34" name="id">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3813</StateNumber>
+      <StateNumber>4060</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="82" parent="34" name="name">
+    <column id="81" parent="34" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>3813</StateNumber>
+      <StateNumber>4060</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="83" parent="34" name="timestamp">
+    <column id="82" parent="34" name="timestamp">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>3813</StateNumber>
+      <StateNumber>4060</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="84" parent="34" name="type">
+    <column id="83" parent="34" name="type">
       <Position>4</Position>
       <DataType>smallint|0s</DataType>
-      <StateNumber>3813</StateNumber>
+      <StateNumber>4060</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <index id="85" parent="34" name="vouchers_pkey">
-      <ObjectId>20377</ObjectId>
-      <StateNumber>3813</StateNumber>
+    <index id="84" parent="34" name="vouchers_pkey">
+      <ObjectId>20728</ObjectId>
+      <StateNumber>4060</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="86" parent="34" name="vouchers_pkey">
-      <ObjectId>20378</ObjectId>
-      <StateNumber>3813</StateNumber>
+    <key id="85" parent="34" name="vouchers_pkey">
+      <ObjectId>20729</ObjectId>
+      <StateNumber>4060</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>vouchers_pkey</UnderlyingIndexName>

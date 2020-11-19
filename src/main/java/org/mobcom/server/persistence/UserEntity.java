@@ -17,11 +17,8 @@ public class UserEntity extends BaseEntity {
     public static final String FIND_ALL = "UserEntity.findAll";
     public static final String FIND_BY_USER_NAME = "UserEntity.findByUserName";
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "full_name")
+    private String fullName;
 
     @Column(name = "nif")
     private int NIF;
@@ -44,20 +41,12 @@ public class UserEntity extends BaseEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserVoucherEntity> vouchers;
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getNIF() {

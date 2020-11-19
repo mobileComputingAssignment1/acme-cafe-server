@@ -3,9 +3,7 @@ package org.mobcom.server.lib;
 import java.util.List;
 
 public class User extends BaseType {
-
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private int NIF;
     private String creditCard;
     private String userName;
@@ -14,20 +12,12 @@ public class User extends BaseType {
     private int activeCoffees;
     private List<UserVoucher> vouchers;
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getNIF() {

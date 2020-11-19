@@ -1,8 +1,8 @@
 package org.mobcom.server.lib;
 
 public class MenuItem extends BaseType {
-    String name;
-    double price;
+    private String name;
+    private double price;
 
     public String getName() {
         return name;

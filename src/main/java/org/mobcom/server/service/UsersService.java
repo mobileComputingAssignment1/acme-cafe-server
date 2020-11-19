@@ -61,8 +61,10 @@ public class UsersService {
                 return userWithUserName;
             }
         } catch (NoResultException e) {
-            throw new NoResultException("Wrong Password for username");
-        } catch (NonUniqueResultException e) {
+//            throw new NoResultException("Wrong Password for username");
+            return null;
+        }
+        catch (NonUniqueResultException e) {
             throw new NonUniqueResultException("Returned multiple results for unique pair!");
         }
 

@@ -14,8 +14,7 @@ public class UserMapper {
         User user = new User();
         user.setId(entity.getId());
         user.setTimestamp(entity.getTimestamp());
-        user.setFirstName(entity.getFirstName());
-        user.setLastName(entity.getLastName());
+        user.setFullName(entity.getFullName());
         user.setNIF(entity.getNIF());
         user.setCreditCard(entity.getCreditCard());
         user.setUserName(entity.getUserName());
@@ -39,8 +38,7 @@ public class UserMapper {
         UserEntity entity = new UserEntity();
         entity.setId(user.getId());
         entity.setTimestamp(user.getTimestamp());
-        entity.setFirstName(user.getFirstName());
-        entity.setLastName(user.getLastName());
+        entity.setFullName(user.getFullName());
         entity.setNIF(user.getNIF());
         entity.setCreditCard(user.getCreditCard());
         entity.setUserName(user.getUserName());

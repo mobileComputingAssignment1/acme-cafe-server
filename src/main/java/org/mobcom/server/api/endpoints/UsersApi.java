@@ -51,6 +51,9 @@ public class UsersApi {
     public Response loginUser(User user) {
         try {
             User loginUser = usersService.loginUser(user);
+            if (loginUser == null) {
+                return Response.status(Response.Status.NOT_FOUND).entity("username or password error").build();
+            }
             return Response.ok(loginUser).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
