@@ -31,8 +31,8 @@ INSERT INTO orders (id, timestamp, user_id, voucher_id, total_price, receipt_id)
 
 
 
-INSERT INTO order_menu_items (id, timestamp, order_id, menu_item_id, quantity) VALUES ('11662500-dbca-4c91-b7ac-059e9a3affa9', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '28449918-30cc-4197-9017-886b41cfe1ee', 2);
-INSERT INTO order_menu_items (id, timestamp, order_id, menu_item_id, quantity) VALUES ('b7fd2c69-68a9-4f57-b5b4-5f71e9715ff5', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'a93ad337-4fb9-4a5a-9bf8-c60b5beeb51a', 1);
+INSERT INTO order_menu_items (id, timestamp, order_id, menu_item_id, quantity, menu_item_name) VALUES ('11662500-dbca-4c91-b7ac-059e9a3affa9', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '28449918-30cc-4197-9017-886b41cfe1ee', 2, 'coca-cola');
+INSERT INTO order_menu_items (id, timestamp, order_id, menu_item_id, quantity, menu_item_name) VALUES ('b7fd2c69-68a9-4f57-b5b4-5f71e9715ff5', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'a93ad337-4fb9-4a5a-9bf8-c60b5beeb51a', 1, 'coca-cola zero');
 
 
 

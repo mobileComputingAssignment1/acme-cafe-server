@@ -56,36 +56,36 @@ public class OrdersService {
         }
 
         // check if there is a voucher and a discount
-        try{
-            voucher = vouchersService.getVoucher(order.getVoucherId());
-            if (Byte.compare(voucher.getType(), (byte) 0) == 0) {
-                if (user.getActiveCoffees() > 2) {
-                    user.setActiveCoffees(user.getActiveCoffees() - 3);
-                }
-            } else {
-                discount = 0.05;
-            }
-
-            // make the voucher invalid
-            TypedQuery<UserVoucherEntity> query = em.createNamedQuery(UserVoucherEntity.FIND_BY_USER_ID_VOUCHER_ID, UserVoucherEntity.class)
-                    .setParameter("user", UserMapper.toUserEntity(user))
-                    .setParameter("voucherId", voucher.getId());
-
-            UserVoucherEntity userVoucherEntity =  query.getResultList().get(0);
-            userVoucherEntity.setStatus("invalid");
-
-            try {
-                EntityTransaction tx = em.getTransaction();
-                tx.begin();
-                em.persist(userVoucherEntity);
-                tx.commit();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                em.getTransaction().rollback();
-            }
-        } catch (NoResultException e){
-            // user has no voucher
-        }
+//        try{
+//            voucher = vouchersService.getVoucher(order.getVoucherId());
+//            if (Byte.compare(voucher.getType(), (byte) 0) == 0) {
+//                if (user.getActiveCoffees() > 2) {
+//                    user.setActiveCoffees(user.getActiveCoffees() - 3);
+//                }
+//            } else {
+//                discount = 0.05;
+//            }
+//
+//            // make the voucher invalid
+//            TypedQuery<UserVoucherEntity> query = em.createNamedQuery(UserVoucherEntity.FIND_BY_USER_ID_VOUCHER_ID, UserVoucherEntity.class)
+//                    .setParameter("user", UserMapper.toUserEntity(user))
+//                    .setParameter("voucherId", voucher.getId());
+//
+//            UserVoucherEntity userVoucherEntity =  query.getResultList().get(0);
+//            userVoucherEntity.setStatus("invalid");
+//
+//            try {
+//                EntityTransaction tx = em.getTransaction();
+//                tx.begin();
+//                em.persist(userVoucherEntity);
+//                tx.commit();
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//                em.getTransaction().rollback();
+//            }
+//        } catch (NoResultException e){
+//            // user has no voucher
+//        }
 
         for (OrderMenuItem item: order.getMenuItems()) {
             try{
@@ -97,6 +97,7 @@ public class OrdersService {
                 orderMenuItemEntity.setOrder(newOrderEntity);
                 orderMenuItemEntity.setMenuItemId(item.getMenuItemId());
                 orderMenuItemEntity.setId(UUID.randomUUID().toString());
+                orderMenuItemEntity.setMenuItemName(menuItem.getName());
 
 
                 try {

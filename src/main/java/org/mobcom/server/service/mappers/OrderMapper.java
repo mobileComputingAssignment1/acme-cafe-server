@@ -64,6 +64,7 @@ public class OrderMapper {
         product.setMenuItemId(entity.getMenuItemId());
         product.setQuantity(entity.getQuantity());
         product.setOrderId(entity.getOrder().getId());
+        product.setMenuItemName(entity.getMenuItemName());
         return product;
     }
 
@@ -73,6 +74,7 @@ public class OrderMapper {
         entity.setTimestamp(orderMenuItem.getTimestamp());
         entity.setMenuItemId(orderMenuItem.getMenuItemId());
         entity.setQuantity(orderMenuItem.getQuantity());
+        entity.setMenuItemName(orderMenuItem.getMenuItemName());
 //        entity.setOrder(orderMenuItem.getOrderId());
         return entity;
     }

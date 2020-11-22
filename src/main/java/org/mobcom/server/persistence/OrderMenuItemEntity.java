@@ -16,6 +16,9 @@ public class OrderMenuItemEntity extends BaseEntity {
     @Column(name = "menu_item_id")
     private String menuItemId;
 
+    @Column(name = "menu_item_name")
+    private String menuItemName;
+
     @Column(name = "quantity")
     private int quantity;
 
@@ -45,5 +48,13 @@ public class OrderMenuItemEntity extends BaseEntity {
 
     public void setOrder(OrderEntity order) {
         this.order = order;
+    }
+
+    public String getMenuItemName() {
+        return menuItemName;
+    }
+
+    public void setMenuItemName(String menuItemName) {
+        this.menuItemName = menuItemName;
     }
 }
