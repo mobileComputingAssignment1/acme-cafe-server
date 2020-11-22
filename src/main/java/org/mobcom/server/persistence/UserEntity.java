@@ -32,7 +32,7 @@ public class UserEntity extends BaseEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "rsa_key", length=512)
+    @Column(name = "rsa_key", length=1024)
     private String RSAKey;
 
     @Column(name = "active_coffees")

@@ -7,10 +7,14 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(
                 name = "UserVoucherEntity.findAll",
-                query = "SELECT o FROM UserVoucherEntity o")
+                query = "SELECT o FROM UserVoucherEntity o"),
+        @NamedQuery(
+                name = "UserVoucherEntity.findByUserIdVoucherId",
+                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :userId AND o.voucherId = :voucherId")
 })
 public class UserVoucherEntity extends BaseEntity{
     public static final String FIND_ALL = "UserVoucherEntity.findAll";
+    public static final String FIND_BY_USER_ID_VOUCHER_ID = "UserVoucherEntity.findByUserIdVoucherId";
 
     @Column(name = "voucher_id")
     private String voucherId;
@@ -18,6 +22,10 @@ public class UserVoucherEntity extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
+
+    @Column(name = "status")
+    private String status;
+
 
     public String getVoucherId() {
         return voucherId;
@@ -33,5 +41,13 @@ public class UserVoucherEntity extends BaseEntity{
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

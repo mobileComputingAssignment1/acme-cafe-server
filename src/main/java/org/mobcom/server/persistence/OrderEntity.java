@@ -10,14 +10,12 @@ public class OrderEntity extends BaseEntity {
     @Column(name = "user_id")
     private String userId;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.EAGER)
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderMenuItemEntity> menuItems;
 
     @Column(name = "voucher_id")
     private String voucherId;
-
-    @Column(name = "order_id")
-    private String orderId;
 
     @Column(name = "total_price")
     private double totalPrice;
@@ -47,14 +45,6 @@ public class OrderEntity extends BaseEntity {
 
     public void setVoucherId(String voucherId) {
         this.voucherId = voucherId;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public double getTotalPrice() {

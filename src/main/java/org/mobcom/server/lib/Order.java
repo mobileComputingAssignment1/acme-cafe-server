@@ -6,7 +6,6 @@ public class Order extends BaseType{
     private String userId;
     private List<OrderMenuItem> menuItems;
     private String voucherId;
-    private String orderId;
     private double totalPrice;
     private String receiptId;
 
@@ -32,14 +31,6 @@ public class Order extends BaseType{
 
     public void setVoucherId(String voucherId) {
         this.voucherId = voucherId;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public double getTotalPrice() {

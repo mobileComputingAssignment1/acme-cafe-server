@@ -5,6 +5,7 @@ package org.mobcom.server.lib;
 public class UserVoucher extends BaseType{
     private String voucherId;
     private User user;
+    private String status;
 
     public String getVoucherId() {
         return voucherId;
@@ -20,5 +21,13 @@ public class UserVoucher extends BaseType{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

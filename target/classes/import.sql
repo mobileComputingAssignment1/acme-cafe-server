@@ -20,12 +20,12 @@ INSERT INTO vouchers (id, timestamp, type, name) VALUES ('d3d75981-2e2d-4e80-a61
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('59c5bdfb-4944-4840-be44-3fecf603fe28', NOW(), 1, '5% discount');
 
 
-INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('c192b4df-3cc7-4457-ab63-d30bd2538596', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '333f41f0-892a-490c-ad99-d4a236f1e333');
-INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('2eae0338-7539-4bdc-bb14-8f8d3155ac96', NOW(), 'd3d75981-2e2d-4e80-a616-0db48567b2b7', '333f41f0-892a-490c-ad99-d4a236f1e333');
-INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id) VALUES ('e37ac398-0c00-4e41-9e12-0da6ee52540a', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'fd9e546e-4327-414c-830f-6589e8db6e83');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('c192b4df-3cc7-4457-ab63-d30bd2538596', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '333f41f0-892a-490c-ad99-d4a236f1e333', 'valid');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('2eae0338-7539-4bdc-bb14-8f8d3155ac96', NOW(), 'd3d75981-2e2d-4e80-a616-0db48567b2b7', '333f41f0-892a-490c-ad99-d4a236f1e333', 'valid');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('e37ac398-0c00-4e41-9e12-0da6ee52540a', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'fd9e546e-4327-414c-830f-6589e8db6e83', 'valid');
 
 
-INSERT INTO orders (id, timestamp, user_id, voucher_id, order_id, total_price, receipt_id) VALUES ('4ccf48df-82c2-4af0-b2c7-f99ad743c459', NOW(), '333f41f0-892a-490c-ad99-d4a236f1e333', '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 15.5, '4ccf48df-82c2-4af0-b2c7-f99ad743c459');
+INSERT INTO orders (id, timestamp, user_id, voucher_id, total_price, receipt_id) VALUES ('4ccf48df-82c2-4af0-b2c7-f99ad743c459', NOW(), '333f41f0-892a-490c-ad99-d4a236f1e333', '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 15.5, '4ccf48df-82c2-4af0-b2c7-f99ad743c459');
 
 
 

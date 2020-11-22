@@ -1,6 +1,5 @@
 package org.mobcom.server.api.endpoints;
 
-import org.mobcom.server.lib.User;
 import org.mobcom.server.lib.Voucher;
 import org.mobcom.server.service.VouchersService;
 
