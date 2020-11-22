@@ -58,13 +58,15 @@ public class UserMapper {
                     .stream()
                     .map(UserMapper::toUserVoucherEntity)
                     .collect(Collectors.toList()));
+
+            for (UserVoucherEntity userVoucherEntity : entity.getVouchers()){
+                userVoucherEntity.setUser(entity);
+            }
         } else {
             user.setVouchers(new ArrayList<>());
         }
 
-        for (UserVoucherEntity userVoucherEntity : entity.getVouchers()){
-            userVoucherEntity.setUser(entity);
-        }
+
 
         return entity;
     }
