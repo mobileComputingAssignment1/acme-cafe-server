@@ -10,7 +10,7 @@ import javax.persistence.*;
                 query = "SELECT o FROM UserVoucherEntity o"),
         @NamedQuery(
                 name = "UserVoucherEntity.findByUserIdVoucherId",
-                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :userId AND o.voucherId = :voucherId")
+                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :user AND o.voucherId = :voucherId")
 })
 public class UserVoucherEntity extends BaseEntity{
     public static final String FIND_ALL = "UserVoucherEntity.findAll";

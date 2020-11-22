@@ -3,12 +3,16 @@ package org.mobcom.server.service;
 import org.mobcom.server.lib.*;
 import org.mobcom.server.persistence.OrderEntity;
 import org.mobcom.server.persistence.OrderMenuItemEntity;
+import org.mobcom.server.persistence.UserEntity;
+import org.mobcom.server.persistence.UserVoucherEntity;
 import org.mobcom.server.service.mappers.OrderMapper;
+import org.mobcom.server.service.mappers.UserMapper;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class OrdersService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
@@ -61,6 +65,24 @@ public class OrdersService {
             } else {
                 discount = 0.05;
             }
+
+            // make the voucher invalid
+            TypedQuery<UserVoucherEntity> query = em.createNamedQuery(UserVoucherEntity.FIND_BY_USER_ID_VOUCHER_ID, UserVoucherEntity.class)
+                    .setParameter("user", UserMapper.toUserEntity(user))
+                    .setParameter("voucherId", voucher.getId());
+
+            UserVoucherEntity userVoucherEntity =  query.getSingleResult();
+            userVoucherEntity.setStatus("invalid");
+
+            try {
+                EntityTransaction tx = em.getTransaction();
+                tx.begin();
+                em.persist(userVoucherEntity);
+                tx.commit();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                em.getTransaction().rollback();
+            }
         } catch (NoResultException e){
             // user has no voucher
         }
@@ -76,6 +98,7 @@ public class OrdersService {
                 orderMenuItemEntity.setMenuItemId(item.getMenuItemId());
                 orderMenuItemEntity.setId(UUID.randomUUID().toString());
 
+
                 try {
                     EntityTransaction tx = em.getTransaction();
                     tx.begin();
@@ -84,6 +107,21 @@ public class OrdersService {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     em.getTransaction().rollback();
+                }
+
+                // if user bought a coffee we need to save it to his enttity
+                if (menuItem.getId().equals("2ccff0d5-e126-4eaf-a199-9ad96bcfe808")) {
+                    try {
+                        user.setActiveCoffees(user.getActiveCoffees() + item.getQuantity());
+                        UserEntity userEntity = UserMapper.toUserEntity(user);
+                        EntityTransaction tx = em.getTransaction();
+                        tx.begin();
+                        em.merge(userEntity);
+                        tx.commit();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        em.getTransaction().rollback();
+                    }
                 }
 
             } catch (NoResultException e){

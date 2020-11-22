@@ -17,10 +17,11 @@ INSERT INTO users (id, timestamp, full_name, nif, credit_card, user_name, passwo
 
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('4ccf48df-82c2-4af0-b2c7-f99ad743c459', NOW(), 0, 'free coffee');
 INSERT INTO vouchers (id, timestamp, type, name) VALUES ('d3d75981-2e2d-4e80-a616-0db48567b2b7', NOW(), 1, '5% discount');
-INSERT INTO vouchers (id, timestamp, type, name) VALUES ('59c5bdfb-4944-4840-be44-3fecf603fe28', NOW(), 1, '5% discount');
+-- INSERT INTO vouchers (id, timestamp, type, name) VALUES ('59c5bdfb-4944-4840-be44-3fecf603fe28', NOW(), 1, '5% discount');
 
 
 INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('c192b4df-3cc7-4457-ab63-d30bd2538596', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '333f41f0-892a-490c-ad99-d4a236f1e333', 'valid');
+INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('45ec86dd-79c9-4fe6-a9db-6ebed1688837', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', '333f41f0-892a-490c-ad99-d4a236f1e333', 'invalid');
 INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('2eae0338-7539-4bdc-bb14-8f8d3155ac96', NOW(), 'd3d75981-2e2d-4e80-a616-0db48567b2b7', '333f41f0-892a-490c-ad99-d4a236f1e333', 'valid');
 INSERT INTO user_vouchers (id, timestamp, voucher_id, user_id, status) VALUES ('e37ac398-0c00-4e41-9e12-0da6ee52540a', NOW(), '4ccf48df-82c2-4af0-b2c7-f99ad743c459', 'fd9e546e-4327-414c-830f-6589e8db6e83', 'valid');
 
