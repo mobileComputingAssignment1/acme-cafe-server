@@ -38,6 +38,9 @@ public class UserEntity extends BaseEntity {
     @Column(name = "active_coffees")
     private int activeCoffees;
 
+    @Column(name = "total_money_spent")
+    private double totalMoneySpent;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserVoucherEntity> vouchers;
 
@@ -81,7 +84,6 @@ public class UserEntity extends BaseEntity {
         this.password = password;
     }
 
-
     public String getRSAKey() {
         return RSAKey;
     }
@@ -104,5 +106,13 @@ public class UserEntity extends BaseEntity {
 
     public void setVouchers(List<UserVoucherEntity> vouchers) {
         this.vouchers = vouchers;
+    }
+
+    public double getTotalMoneySpent() {
+        return totalMoneySpent;
+    }
+
+    public void setTotalMoneySpent(double totalMoneySpent) {
+        this.totalMoneySpent = totalMoneySpent;
     }
 }

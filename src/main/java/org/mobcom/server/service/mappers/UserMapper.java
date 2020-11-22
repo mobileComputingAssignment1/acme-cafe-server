@@ -22,6 +22,7 @@ public class UserMapper {
         user.setPassword(entity.getPassword());
         user.setRSAKey(entity.getRSAKey());
         user.setActiveCoffees(entity.getActiveCoffees());
+        user.setTotalMoneySpent(entity.getTotalMoneySpent());
 
         if (entity.getVouchers() != null) {
             user.setVouchers(entity.getVouchers()
@@ -50,6 +51,7 @@ public class UserMapper {
         entity.setPassword(user.getPassword());
         entity.setRSAKey(user.getRSAKey());
         entity.setActiveCoffees(user.getActiveCoffees());
+        entity.setTotalMoneySpent(user.getTotalMoneySpent());
 
         if (user.getVouchers() != null) {
             entity.setVouchers(user.getVouchers()
@@ -73,6 +75,7 @@ public class UserMapper {
         userVoucher.setTimestamp(entity.getTimestamp());
         userVoucher.setVoucherId(entity.getVoucherId());
         userVoucher.setStatus(entity.getStatus());
+        userVoucher.setName(entity.getName());
 
         return userVoucher;
     }
@@ -81,8 +84,9 @@ public class UserMapper {
         UserVoucherEntity entity = new UserVoucherEntity();
         entity.setId(userVoucher.getId());
         entity.setStatus(userVoucher.getStatus());
-        entity.setVoucherId(entity.getVoucherId());
-        entity.setTimestamp(entity.getTimestamp());
+        entity.setVoucherId(userVoucher.getVoucherId());
+        entity.setTimestamp(userVoucher.getTimestamp());
+        entity.setName(userVoucher.getName());
 
         return entity;
     }

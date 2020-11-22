@@ -71,7 +71,7 @@ public class OrdersService {
                     .setParameter("user", UserMapper.toUserEntity(user))
                     .setParameter("voucherId", voucher.getId());
 
-            UserVoucherEntity userVoucherEntity =  query.getSingleResult();
+            UserVoucherEntity userVoucherEntity =  query.getResultList().get(0);
             userVoucherEntity.setStatus("invalid");
 
             try {
@@ -132,7 +132,20 @@ public class OrdersService {
 
         totalPrice = totalPrice - totalPrice * discount;
 
-        //
+        // add the money to the user account
+        user.setTotalMoneySpent(user.getTotalMoneySpent() + totalPrice);
+        try {
+            UserEntity userEntity = UserMapper.toUserEntity(user);
+            EntityTransaction tx = em.getTransaction();
+            tx.begin();
+            em.merge(userEntity);
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        }
+
+
         newOrderEntity = OrderMapper.toEntity(order);
         newOrderEntity.setReceiptId("functionality not yet implemented");
         newOrderEntity.setTotalPrice(totalPrice);
@@ -146,6 +159,43 @@ public class OrdersService {
         } catch (Exception e) {
             e.printStackTrace();
             em.getTransaction().rollback();
+        }
+
+        UserVoucherEntity newVoucher = new UserVoucherEntity();
+        // add a new coffee voucher to the client
+        if (user.getActiveCoffees() > 2) {
+            newVoucher.setName("free coffee");
+            newVoucher.setStatus("valid");
+            newVoucher.setUser(UserMapper.toUserEntity(user));
+            newVoucher.setId(UUID.randomUUID().toString());
+            newVoucher.setVoucherId("4ccf48df-82c2-4af0-b2c7-f99ad743c459");
+            try {
+                EntityTransaction tx = em.getTransaction();
+                tx.begin();
+                em.persist(newVoucher);
+                tx.commit();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                em.getTransaction().rollback();
+            }
+        }
+        // add a new coffee voucher to the client
+        if (user.getTotalMoneySpent() > 100.0){
+            user.setTotalMoneySpent(user.getTotalMoneySpent() - 100.0);
+            newVoucher.setName("5% discount");
+            newVoucher.setStatus("valid");
+            newVoucher.setUser(UserMapper.toUserEntity(user));
+            newVoucher.setId(UUID.randomUUID().toString());
+            newVoucher.setVoucherId("d3d75981-2e2d-4e80-a616-0db48567b2b7");
+            try {
+                EntityTransaction tx = em.getTransaction();
+                tx.begin();
+                em.persist(newVoucher);
+                tx.commit();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                em.getTransaction().rollback();
+            }
         }
 
         return OrderMapper.fromEntity(newOrderEntity);

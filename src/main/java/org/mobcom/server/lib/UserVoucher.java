@@ -6,6 +6,7 @@ public class UserVoucher extends BaseType{
     private String voucherId;
     private User user;
     private String status;
+    private String name;
 
     public String getVoucherId() {
         return voucherId;
@@ -29,5 +30,13 @@ public class UserVoucher extends BaseType{
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

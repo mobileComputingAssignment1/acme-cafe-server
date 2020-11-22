@@ -11,6 +11,7 @@ public class User extends BaseType {
     private String RSAKey;
     private int activeCoffees;
     private List<UserVoucher> vouchers;
+    private double totalMoneySpent;
 
     public String getFullName() {
         return fullName;
@@ -74,5 +75,13 @@ public class User extends BaseType {
 
     public void setVouchers(List<UserVoucher> vouchers) {
         this.vouchers = vouchers;
+    }
+
+    public double getTotalMoneySpent() {
+        return totalMoneySpent;
+    }
+
+    public void setTotalMoneySpent(double totalMoneySpent) {
+        this.totalMoneySpent = totalMoneySpent;
     }
 }

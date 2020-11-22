@@ -10,7 +10,7 @@ import javax.persistence.*;
                 query = "SELECT o FROM UserVoucherEntity o"),
         @NamedQuery(
                 name = "UserVoucherEntity.findByUserIdVoucherId",
-                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :user AND o.voucherId = :voucherId")
+                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :user AND o.voucherId = :voucherId AND o.status = 'valid'")
 })
 public class UserVoucherEntity extends BaseEntity{
     public static final String FIND_ALL = "UserVoucherEntity.findAll";
@@ -26,6 +26,8 @@ public class UserVoucherEntity extends BaseEntity{
     @Column(name = "status")
     private String status;
 
+    @Column(name = "name")
+    private String name;
 
     public String getVoucherId() {
         return voucherId;
@@ -49,5 +51,13 @@ public class UserVoucherEntity extends BaseEntity{
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
