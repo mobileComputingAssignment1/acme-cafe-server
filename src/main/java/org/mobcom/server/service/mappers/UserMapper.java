@@ -75,7 +75,7 @@ public class UserMapper {
         UserVoucher userVoucher = new UserVoucher();
         userVoucher.setId(entity.getId());
         userVoucher.setTimestamp(entity.getTimestamp());
-        userVoucher.setVoucherId(entity.getVoucherId());
+//        userVoucher.setVoucherId(entity.getVoucherId());
         userVoucher.setStatus(entity.getStatus());
         userVoucher.setName(entity.getName());
 
@@ -86,7 +86,7 @@ public class UserMapper {
         UserVoucherEntity entity = new UserVoucherEntity();
         entity.setId(userVoucher.getId());
         entity.setStatus(userVoucher.getStatus());
-        entity.setVoucherId(userVoucher.getVoucherId());
+//        entity.setVoucherId(userVoucher.getVoucherId());
         entity.setTimestamp(userVoucher.getTimestamp());
         entity.setName(userVoucher.getName());
 

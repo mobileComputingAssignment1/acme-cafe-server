@@ -1,6 +1,6 @@
 package org.mobcom.server.api.endpoints;
 
-import org.mobcom.server.lib.Voucher;
+import org.mobcom.server.lib.UserVoucher;
 import org.mobcom.server.service.VouchersService;
 
 import javax.ws.rs.*;
@@ -18,7 +18,7 @@ public class VouchersApi {
     @GET
     public Response getAllVouchers() {
         try {
-            List<Voucher> vouchers = vouchersService.getAllVouchers();
+            List<UserVoucher> vouchers = vouchersService.getAllVouchers();
             return Response.ok(vouchers).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
@@ -30,8 +30,19 @@ public class VouchersApi {
     @Path("/{voucherId}")
     public Response getUser(@PathParam("voucherId") String voucherId) {
         try {
-            Voucher voucher = vouchersService.getVoucher(voucherId);
+            UserVoucher voucher = vouchersService.getVoucher(voucherId);
             return Response.ok(voucher).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
+    }
+
+    @GET
+    @Path("/user/{userId}")
+    public Response getAllUserVouchers(@PathParam("userId") String userId) {
+        try {
+            List<UserVoucher> vouchers = vouchersService.getAllUserVouchers(userId);
+            return Response.ok(vouchers).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
         }

@@ -1,8 +1,9 @@
 package org.mobcom.server.service;
 
-import org.mobcom.server.lib.Voucher;
-import org.mobcom.server.persistence.VoucherEntity;
-import org.mobcom.server.service.mappers.VoucherMapper;
+import org.mobcom.server.lib.UserVoucher;
+import org.mobcom.server.persistence.UserEntity;
+import org.mobcom.server.persistence.UserVoucherEntity;
+import org.mobcom.server.service.mappers.UserVoucherMapper;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,18 +13,29 @@ public class VouchersService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
     private EntityManager em = emf.createEntityManager();
 
-    public Voucher getVoucher(String voucherId){
-        VoucherEntity voucherEntity = em.find(VoucherEntity.class, voucherId);
-        return VoucherMapper.fromVoucherEntity(voucherEntity);
+    public UserVoucher getVoucher(String userVoucherId){
+        UserVoucherEntity voucherEntity = em.find(UserVoucherEntity.class, userVoucherId);
+        return UserVoucherMapper.fromUserVoucherEntity(voucherEntity);
     }
 
-    public List<Voucher> getAllVouchers() {
-        TypedQuery<VoucherEntity> query = em.createNamedQuery(VoucherEntity.FIND_ALL, VoucherEntity.class);
+    public List<UserVoucher> getAllVouchers() {
+        TypedQuery<UserVoucherEntity> query = em.createNamedQuery(UserVoucherEntity.FIND_ALL, UserVoucherEntity.class);
 
         return query.getResultStream()
-                .map(VoucherMapper::fromVoucherEntity)
+                .map(UserVoucherMapper::fromUserVoucherEntity)
                 .collect(Collectors.toList());
     }
+
+    public List<UserVoucher> getAllUserVouchers(String userId) {
+        TypedQuery<UserVoucherEntity> query = em.createNamedQuery(UserVoucherEntity.FIND_BY_USER_ID, UserVoucherEntity.class);
+        UserEntity userEntity = em.find(UserEntity.class, userId);
+        query.setParameter("user", userEntity);
+
+        return query.getResultStream()
+                .map(UserVoucherMapper::fromUserVoucherEntity)
+                .collect(Collectors.toList());
+    }
+
 
 
 }

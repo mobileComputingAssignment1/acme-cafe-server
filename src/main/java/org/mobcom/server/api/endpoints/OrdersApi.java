@@ -27,6 +27,17 @@ public class OrdersApi {
         }
     }
 
+    @GET
+    @Path("/user/{userId}")
+    public Response getOrdersFromUser(@PathParam("userId") String userId) {
+        try {
+            List<Order> orders = ordersService.getOrdersFromUser(userId);
+            return Response.ok(orders).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(e).build();
+        }
+    }
+
     @POST
     public Response verifyOrder(Order order) {
         try {

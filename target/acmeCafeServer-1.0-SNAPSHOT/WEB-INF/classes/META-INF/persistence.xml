@@ -11,7 +11,6 @@
     <class>org.mobcom.server.persistence.OrderMenuItemEntity</class>
     <class>org.mobcom.server.persistence.UserEntity</class>
     <class>org.mobcom.server.persistence.UserVoucherEntity</class>
-    <class>org.mobcom.server.persistence.VoucherEntity</class>
     <properties>
         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/postgres" />
         <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

@@ -9,15 +9,15 @@ import javax.persistence.*;
                 name = "UserVoucherEntity.findAll",
                 query = "SELECT o FROM UserVoucherEntity o"),
         @NamedQuery(
-                name = "UserVoucherEntity.findByUserIdVoucherId",
-                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :user AND o.voucherId = :voucherId AND o.status = 'valid'")
+                name = "UserVoucherEntity.findByUserId",
+                query = "SELECT o FROM UserVoucherEntity o WHERE o.user = :user AND o.status = 'valid'")
 })
 public class UserVoucherEntity extends BaseEntity{
     public static final String FIND_ALL = "UserVoucherEntity.findAll";
-    public static final String FIND_BY_USER_ID_VOUCHER_ID = "UserVoucherEntity.findByUserIdVoucherId";
+    public static final String FIND_BY_USER_ID = "UserVoucherEntity.findByUserId";
 
-    @Column(name = "voucher_id")
-    private String voucherId;
+//    @Column(name = "voucher_id")
+//    private String voucherId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -29,13 +29,16 @@ public class UserVoucherEntity extends BaseEntity{
     @Column(name = "name")
     private String name;
 
-    public String getVoucherId() {
-        return voucherId;
-    }
+    @Column(name = "type")
+    private byte type;
 
-    public void setVoucherId(String voucherId) {
-        this.voucherId = voucherId;
-    }
+//    public String getVoucherId() {
+//        return voucherId;
+//    }
+//
+//    public void setVoucherId(String voucherId) {
+//        this.voucherId = voucherId;
+//    }
 
     public UserEntity getUser() {
         return user;
@@ -59,5 +62,13 @@ public class UserVoucherEntity extends BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public byte getType() {
+        return type;
+    }
+
+    public void setType(byte type) {
+        this.type = type;
     }
 }

@@ -5,7 +5,13 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@NamedQueries({
+        @NamedQuery(
+                name = "OrderEntity.findOrdersFromUser",
+                query = "SELECT o FROM OrderEntity o WHERE o.userId = :userId")
+})
 public class OrderEntity extends BaseEntity {
+    public static final String FIND_ORDERS_FROM_USER = "OrderEntity.findOrdersFromUser";
 
     @Column(name = "user_id")
     private String userId;

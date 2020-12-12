@@ -24,7 +24,7 @@ public class OrdersService {
 
     public Order verifyOrder(Order order){
         User user = null;
-        Voucher voucher = null;
+        UserVoucher voucher = null;
         UserVoucher newUserVoucher = new UserVoucher();
         MenuItem menuItem = null;
         double discount = 0.0;
@@ -169,7 +169,7 @@ public class OrdersService {
             newVoucher.setStatus("valid");
             newVoucher.setUser(UserMapper.toUserEntity(user));
             newVoucher.setId(UUID.randomUUID().toString());
-            newVoucher.setVoucherId("4ccf48df-82c2-4af0-b2c7-f99ad743c459");
+            newVoucher.setType((byte) '0');
             try {
                 EntityTransaction tx = em.getTransaction();
                 tx.begin();
@@ -187,7 +187,7 @@ public class OrdersService {
             newVoucher.setStatus("valid");
             newVoucher.setUser(UserMapper.toUserEntity(user));
             newVoucher.setId(UUID.randomUUID().toString());
-            newVoucher.setVoucherId("d3d75981-2e2d-4e80-a616-0db48567b2b7");
+            newVoucher.setType((byte) '1');
             try {
                 EntityTransaction tx = em.getTransaction();
                 tx.begin();
@@ -206,6 +206,15 @@ public class OrdersService {
     public Order getOrder(String orderId){
         OrderEntity orderEntity = em.find(OrderEntity.class, orderId);
         return OrderMapper.fromEntity(orderEntity);
+    }
+
+    public List<Order> getOrdersFromUser (String userId){
+        TypedQuery<OrderEntity> query = em.createNamedQuery(OrderEntity.FIND_ORDERS_FROM_USER, OrderEntity.class);
+        query.setParameter("userId", userId);
+
+        return query.getResultStream()
+                .map(OrderMapper::fromEntity)
+                .collect(Collectors.toList());
     }
 
     public List<UserVoucher> makeOrder(String orderId) {
