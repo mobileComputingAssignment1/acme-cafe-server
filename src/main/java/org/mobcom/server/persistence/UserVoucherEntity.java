@@ -16,9 +16,6 @@ public class UserVoucherEntity extends BaseEntity{
     public static final String FIND_ALL = "UserVoucherEntity.findAll";
     public static final String FIND_BY_USER_ID = "UserVoucherEntity.findByUserId";
 
-//    @Column(name = "voucher_id")
-//    private String voucherId;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
@@ -31,14 +28,6 @@ public class UserVoucherEntity extends BaseEntity{
 
     @Column(name = "type")
     private byte type;
-
-//    public String getVoucherId() {
-//        return voucherId;
-//    }
-//
-//    public void setVoucherId(String voucherId) {
-//        this.voucherId = voucherId;
-//    }
 
     public UserEntity getUser() {
         return user;

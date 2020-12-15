@@ -33,8 +33,10 @@ public class UserMapper {
             user.setVouchers(new ArrayList<>());
         }
 
-//        for (UserVoucher userVoucher : user.getVouchers()){
-//            userVoucher.setUser(user);
+//        if(!user.getVouchers().isEmpty()){
+//            for (UserVoucher userVoucher : user.getVouchers()){
+//                userVoucher.setUser(user);
+//            }
 //        }
 
         return user;
@@ -42,7 +44,8 @@ public class UserMapper {
 
     public static UserEntity toUserEntity(User user) {
         UserEntity entity = new UserEntity();
-        entity.setId(user.getId());
+        if (user.getId() != null)
+            entity.setId(user.getId());
         entity.setTimestamp(user.getTimestamp());
         entity.setFullName(user.getFullName());
         entity.setNIF(user.getNIF());
@@ -75,9 +78,9 @@ public class UserMapper {
         UserVoucher userVoucher = new UserVoucher();
         userVoucher.setId(entity.getId());
         userVoucher.setTimestamp(entity.getTimestamp());
-//        userVoucher.setVoucherId(entity.getVoucherId());
         userVoucher.setStatus(entity.getStatus());
         userVoucher.setName(entity.getName());
+        userVoucher.setType(entity.getType());
 
         return userVoucher;
     }
@@ -86,9 +89,9 @@ public class UserMapper {
         UserVoucherEntity entity = new UserVoucherEntity();
         entity.setId(userVoucher.getId());
         entity.setStatus(userVoucher.getStatus());
-//        entity.setVoucherId(userVoucher.getVoucherId());
         entity.setTimestamp(userVoucher.getTimestamp());
         entity.setName(userVoucher.getName());
+        entity.setType(userVoucher.getType());
 
         return entity;
     }

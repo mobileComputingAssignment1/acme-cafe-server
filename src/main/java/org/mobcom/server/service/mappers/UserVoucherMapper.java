@@ -12,19 +12,26 @@ public class UserVoucherMapper {
         voucher.setType(entity.getType());
         voucher.setName(entity.getName());
         voucher.setStatus(entity.getStatus());
-        voucher.setType(entity.getType());
+//            if(entity.getUser() != null){
+//                voucher.setUser(UserMapper.fromUserEntity(entity.getUser()));
+//            }
+
 
         return voucher;
     }
 
     public static UserVoucherEntity toUserVoucherEntity(UserVoucher voucher) {
         UserVoucherEntity entity = new UserVoucherEntity();
+
         entity.setId(voucher.getId());
         entity.setTimestamp(voucher.getTimestamp());
         entity.setType(voucher.getType());
         entity.setName(voucher.getName());
         entity.setStatus(voucher.getStatus());
-        entity.setType(voucher.getType());
+//            if(voucher.getUser() != null){
+//                entity.setUser(UserMapper.toUserEntity(voucher.getUser()));
+//            }
+
 
         return entity;
     }
